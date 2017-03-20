@@ -16,7 +16,7 @@ public class Remote {
     public static String getUrlByGet(String siteUrl) {
         String result = "";
 
-        if(siteUrl.startsWith("http")) {
+        if(!siteUrl.startsWith("http")) {
             siteUrl = "http://" + siteUrl;
         }
 
