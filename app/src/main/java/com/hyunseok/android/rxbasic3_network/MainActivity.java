@@ -32,15 +32,15 @@ public class MainActivity extends AppCompatActivity {
                 );
 
         cnetObservable
-                .subscribeOn(Schedulers.io())
-                .observeOn(AndroidSchedulers.mainThread())
+                .subscribeOn(Schedulers.io()) // 발행자를 별도의 SubThread 에서 동작시킨다
+                .observeOn(AndroidSchedulers.mainThread()) // 구독자를 mainThread 에서 동작시킨다.
                 .subscribe(
                         (result) -> { textView_slow.setText(result); }
                 );
 
         naverObservable
-                .subscribeOn(Schedulers.io())
-                .observeOn(AndroidSchedulers.mainThread())
+                .subscribeOn(Schedulers.io()) // 발행자를 별도의 SubThread 에서 동작시킨다
+                .observeOn(AndroidSchedulers.mainThread()) // 구독자를 mainThread 에서 동작시킨다.
                 .subscribe(
                         (result) -> { textView_fast.setText(result); }
                 );
